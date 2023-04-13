@@ -17,11 +17,10 @@ RUN pacman -S --noconfirm \
     xorg-server-xvfb \
     xorg-xinit
 
-# noVNC setup
-WORKDIR /usr/share/
-RUN git clone https://github.com/novnc/noVNC.git
-WORKDIR /usr/share/noVNC/utils/
-RUN git clone https://github.com/novnc/websockify.git
+# Install VNC. Requires net-tools, python and python-numpy
+RUN git clone --branch v1.2.0 --single-branch https://github.com/novnc/noVNC.git /opt/noVNC
+RUN git clone --branch v0.9.0 --single-branch https://github.com/novnc/websockify.git /opt/noVNC/utils/websockify
+RUN ln -s /opt/noVNC/vnc.html /opt/noVNC/index.html
 
 RUN export DISPLAY=:0.0
 
