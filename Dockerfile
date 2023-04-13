@@ -1,6 +1,4 @@
-FROM archlinux:base
-
-LABEL maintainer="fmacrae.dev@gmail.com"
+FROM manjarolinux/base
 
 RUN pacman -Sy --noconfirm archlinux-keyring
 RUN pacman -Syyu --noconfirm
