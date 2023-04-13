@@ -19,9 +19,9 @@ RUN pacman -S --noconfirm \
 
 # noVNC setup
 WORKDIR /usr/share/
-RUN git clone https://github.com/kanaka/noVNC.git
+RUN git clone https://github.com/novnc/noVNC.git
 WORKDIR /usr/share/noVNC/utils/
-RUN git clone https://github.com/kanaka/websockify
+RUN git clone https://github.com/novnc/websockify.git
 
 RUN export DISPLAY=:0.0
 
