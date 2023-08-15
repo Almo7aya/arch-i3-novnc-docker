@@ -7,6 +7,7 @@ RUN pacman -S --noconfirm \
   i3-wm \
   dmenu \
   # obs-studio \
+  sudo \
   yt-dlp \
   ffmpeg \
   vlc \
@@ -33,7 +34,14 @@ COPY supervisord.conf /etc/
 
 EXPOSE 8083
 
-RUN useradd -m user
+RUN useradd -rm -d /home/user -s /bin/bash -g root -G sudo -u 1001 user 
+USER user
 WORKDIR /home/user
+
+RUN git clone https://aur.archlinux.org/yay.git \
+  cd yay \
+  makepkg -si --noconfirm \
+  cd .. \
+  rm -rf yay
 
 CMD ["/usr/bin/supervisord"]
