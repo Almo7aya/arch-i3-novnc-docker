@@ -9,6 +9,7 @@ RUN pacman -S --noconfirm \
   obs-studio \
   yt-dlp \
   ffmpeg \
+  vlc \
   git \
   net-tools \
   python3 \
