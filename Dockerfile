@@ -1,4 +1,4 @@
-FROM archlinux:base
+FROM menci/archlinuxarm
 
 RUN pacman -Sy --noconfirm archlinux-keyring
 RUN pacman -Syyu --noconfirm
