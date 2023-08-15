@@ -39,10 +39,4 @@ RUN echo "user ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 USER user
 WORKDIR /home/user
 
-RUN git clone https://aur.archlinux.org/yay.git \
-  cd yay \
-  makepkg -si --noconfirm \
-  cd .. \
-  rm -rf yay
-
 CMD ["/usr/bin/supervisord"]
