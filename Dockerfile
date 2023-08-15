@@ -6,7 +6,7 @@ RUN pacman -S --noconfirm \
   i3status \
   i3-wm \
   dmenu \
-  obs-studio \
+  # obs-studio \
   yt-dlp \
   ffmpeg \
   vlc \
