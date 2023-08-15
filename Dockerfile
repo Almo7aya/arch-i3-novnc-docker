@@ -3,19 +3,23 @@ FROM manjarolinux/base
 RUN pacman -Sy --noconfirm archlinux-keyring
 RUN pacman -Syyu --noconfirm
 RUN pacman -S --noconfirm \
-    i3status \
-    i3-wm \
-    git \
-    net-tools \
-    python3 \
-    rxvt-unicode \
-    supervisor \
-    ttf-dejavu \
-    x11vnc \
-    xorg-server \
-    xorg-apps \
-    xorg-server-xvfb \
-    xorg-xinit
+  i3status \
+  i3-wm \
+  dmenu \
+  obs-studio \
+  yt-dlp \
+  ffmpeg \
+  git \
+  net-tools \
+  python3 \
+  rxvt-unicode \
+  supervisor \
+  ttf-dejavu \
+  x11vnc \
+  xorg-server \
+  xorg-apps \
+  xorg-server-xvfb \
+  xorg-xinit
 
 # Install VNC. Requires net-tools, python and python-numpy
 RUN git clone --branch v1.2.0 --single-branch https://github.com/novnc/noVNC.git /opt/noVNC
