@@ -34,7 +34,8 @@ COPY supervisord.conf /etc/
 
 EXPOSE 8083
 
-RUN useradd -rm -d /home/user -s /bin/bash -g root -G sudo -u 1001 user 
+RUN useradd -m -G wheel -s /bin/bash user 
+RUN echo "user ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 USER user
 WORKDIR /home/user
 
